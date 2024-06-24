@@ -26,9 +26,12 @@ const DB = process.env.DB
 const PORT = process.env.PORT
 
 mongoose.connect(DB)
+
 .then(() => {
             app.listen(PORT, () => {
                 console.log(' conected to the database')
                 console.log(` run on port ${PORT} `)
             })
-}).catch(() => console.log('error , conection failed'))
+}).catch(() => console.log('error , DB conection failed'))
+
+
