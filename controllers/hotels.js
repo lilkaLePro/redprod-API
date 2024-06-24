@@ -31,6 +31,7 @@ export const createHotel = async (req , res) => {
         currency : req.body.currency,
         adminId : req.user.id
     }
+    
     const hotel = new Hotel({
         ...objHotel , 
         image : `uploads/${req.file.filename}`

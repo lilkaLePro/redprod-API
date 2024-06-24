@@ -1,6 +1,5 @@
 import Auth from '../models/auth.js'
 import bcrypt from 'bcrypt'
-import session from 'express-session'
 import jwt from "jsonwebtoken"
 
 const createUser = async (req , res) => {

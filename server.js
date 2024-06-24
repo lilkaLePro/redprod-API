@@ -13,11 +13,17 @@ app.use(express.urlencoded({extended : true}))
 app.use(express.json())
 
 app.use(cors({
-    origin : process.env.FRONT_URL || 3000,
+    origin : process.env.FRONT_URL || "locahost://3000",
     methods : ["GET","POST","PUT","DELETE"],
     credentials : true
 }))
-// routes
+// app.use((req , res , next) => {
+//     res.setHeader('Access-Control-Allow-Origin' , "*")
+//     res.setHeader('Access-Control-Allow-Origin' , "Origin, X-request-with, Accept, contentType, authorization")
+//     res.setHeader('Access-Control-Allow-Methods' , "GET, POST, PUT, DELETE, PATCH , OPTIONS")
+// })
+console.log(process.env.FRONT_URL)
+//routes
 app.use("/api/hotels" , hotelRoutes )
 app.use("/api/auths" , userRoutes )
 app.use("/uploads", express.static(path.join(__dirname,"..","uploads")))
