@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended : true}))
 app.use(express.json())
 
 app.use(cors({
-    origin : process.env.FRONT_URL,
+    origin : process.env.FRONT_URL || 'http://localhost:3000',
     methods : ["GET","POST","PUT","DELETE"],
     credentials : true
 }))
