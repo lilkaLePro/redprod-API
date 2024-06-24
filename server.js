@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended : true}))
 app.use(express.json())
 
 app.use(cors({
-    origin : "http://localhost:3000",
+    origin : process.env.FRONT_URL,
     methods : ["GET","POST","PUT","DELETE"],
     credentials : true
 }))
@@ -21,13 +21,14 @@ app.use(cors({
 app.use("/api/hotels" , hotelRoutes )
 app.use("/api/auths" , userRoutes )
 app.use("/uploads", express.static(path.join(__dirname,"..","uploads")))
-// console.log(path.join(__dirname, '..',"uploads"))
 
-// const PORT = 8080
-mongoose.connect(process.env.DB)
+const db = process.env.DB
+const PORT = process.env.PORT
+
+mongoose.connect(db)
 .then(() => {
-            app.listen(process.env.PORT, () => {
+            app.listen(PORT, () => {
                 console.log(' conected to the database')
-                console.log(` run on port ${process.env.PORT} `)
+                console.log(` run on port ${PORT} `)
             })
 }).catch(() => console.log('error , conection failed'))

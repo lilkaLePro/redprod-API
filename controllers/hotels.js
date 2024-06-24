@@ -29,6 +29,7 @@ export const createHotel = async (req , res) => {
         tel : req.body.tel,
         price : req.body.price,
         currency : req.body.currency,
+        adminId : req.user.id
     }
     const hotel = new Hotel({
         ...objHotel , 

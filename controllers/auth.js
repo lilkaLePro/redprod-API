@@ -14,8 +14,8 @@ const createUser = async (req , res) => {
         userName : req.body.userName , 
         email : req.body.email , 
         password : passwordHash,
-        id : Auth.lenght + 1
-    })
+        id : Auth.lenght + 1,
+        })
     
     const savedUser = await user.save();
     res.status(201).json(savedUser)
