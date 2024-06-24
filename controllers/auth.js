@@ -65,7 +65,6 @@ const connectUser = async (req , res, next) => {
             res.status(500).json({message : error.message})
         }
     }
-
 const deleteUser = async (req , res ) => {
     // try {   
     //     const {id } = req.params
@@ -80,7 +79,6 @@ const deleteUser = async (req , res ) => {
     //     res.status(500).json({message : error.message})
     // }
 }
-
 export {
     createUser , connectUser , getUsers
 }
