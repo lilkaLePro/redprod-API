@@ -1,6 +1,7 @@
 import Auth from '../models/auth.js'
 import bcrypt from 'bcrypt'
 import jwt from "jsonwebtoken"
+import { Hotel } from 'lucide-react'
 
 const createUser = async (req , res) => {
     console.log(req.body)
@@ -66,7 +67,17 @@ const connectUser = async (req , res, next) => {
         }
     }
 
+const deleteUser = async (req , res ) => {
+    try {   
+        const {id } = req.params
+        await Hotel.findByAndDelete({ id })
+        
+
+    }catch(error) {
+        res.status(500).json({message : error.message})
+    }
+}
 
 export {
-    createUser , connectUser , getUsers
+    createUser , connectUser , getUsers , deleteUser
 }

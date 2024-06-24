@@ -41,7 +41,8 @@ const uploads = multer ({ storage : stockage })
 
 
 hotelRoutes.get('/getHotels',  getHotels)
-hotelRoutes.get('/hotel/id',  getHotel)
+hotelRoutes.get('/hotel/:id',  getHotel)
+hotelRoutes.delete('/hotel/id' , )
 
 hotelRoutes.post('/create' ,uploads.single('image') , createHotel  )
 
