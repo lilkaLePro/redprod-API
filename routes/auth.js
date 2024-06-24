@@ -1,5 +1,5 @@
 import express  from 'express'
-import {createUser , connectUser , getUsers, deleteUser} from '../controllers/auth.js'
+import {createUser , connectUser , getUsers} from '../controllers/auth.js'
 
 
 const userRoutes = express.Router()
@@ -21,7 +21,6 @@ userRoutes.post('/create' , createUser)
 userRoutes.post('/connect' , connectUser)
 
 userRoutes.get('/usersData' , getUsers)
-userRoutes.delete('/delete/id' , deleteUser)
 
 export default   userRoutes ;
 
