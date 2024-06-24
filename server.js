@@ -17,11 +17,7 @@ app.use(cors({
     methods : ["GET","POST","PUT","DELETE"],
     credentials : true
 }))
-// app.use((req , res , next) => {
-//     res.setHeader('Access-Control-Allow-Origin' , "*")
-//     res.setHeader('Access-Control-Allow-Origin' , "Origin, X-request-with, Accept, contentType, authorization")
-//     res.setHeader('Access-Control-Allow-Methods' , "GET, POST, PUT, DELETE, PATCH , OPTIONS")
-// })
+
 console.log(process.env.FRONT_URL)
 //routes
 app.use("/api/hotels" , hotelRoutes )
