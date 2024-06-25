@@ -33,6 +33,7 @@ export const createHotel = async (req , res) => {
     }
     
     const hotel = new Hotel({
+        
         ...objHotel , 
         image : `uploads/${req.file.filename}`
     })
@@ -46,4 +47,8 @@ export const createHotel = async (req , res) => {
             res.status(500).json({message : err.message})
         })
     
+}
+
+export {
+    getHotel, getHotels , createHotel
 }
