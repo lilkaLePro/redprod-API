@@ -1,6 +1,6 @@
 import express from 'express'
 const hotelRoutes = express.Router()
-import {getHotels , getHotel, createHotel} from '../controllers/hotels.js'
+import {getHotels , getHotel, createHotel, deleteHotel} from '../controllers/hotels.js'
 import multer from 'multer'
 import path from 'path'
 import fs from 'fs'
@@ -44,6 +44,7 @@ hotelRoutes.get('/getHotels',  getHotels)
 hotelRoutes.get('/hotel/id',  getHotel)
 
 hotelRoutes.post('/create' ,uploads.single('image') , createHotel  )
+hotelRoutes.delete('/deleteHotel/:id' , deleteHotel)
 
 // routes.put('/' , updateProduct)
 

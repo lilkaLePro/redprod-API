@@ -45,9 +45,22 @@ const createHotel = async (req , res) => {
         .catch((err) => {
             res.status(500).json({message : err.message})
         })
-    
+}
+const deleteHotel = async (req , res) => {
+    const hotelId = req.params.id
+    try {
+        const deletedHotel = await Hotel.findByIdAndDelete(hotelId)
+
+        if(!deleteHotel){
+            res.status(4040).json({message : "hotel not found"})
+        }
+        res.staus(200).json({message : "hotel deleted successfully "})
+
+    } catch (error) {
+        res.staus(500).json({message : error.message})
+    }
 }
 
 export {
-    getHotel, getHotels , createHotel
+    getHotel, getHotels , createHotel , deleteHotel
 }

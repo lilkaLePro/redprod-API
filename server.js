@@ -18,7 +18,6 @@ app.use(cors({
     credentials : true
 }))
 
-console.log(process.env.FRONT_URL)
 //routes
 app.use("/api/hotels" , hotelRoutes )
 app.use("/api/auths" , userRoutes )
