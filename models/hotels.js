@@ -30,11 +30,6 @@ const HotelSchema =  mongoose.Schema(
         email : {
             type : String,
             required : true
-        },
-        adminId : {
-            type : String,
-            model : Auth,
-            id : "id",
         }
     }
 )
